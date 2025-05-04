@@ -1,0 +1,55 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum JobStatus {
+  ATIVO
+  INATIVO
+  EXPIRADO
+}
+
+model Job {
+  id            Int      @id @default(autoincrement())  
+  title         String
+  company       String
+  location      String
+  industry      String
+  description   String
+  requisitos    Requirement[] 
+  beneficios    Benefit[] 
+  tags          tags[] 
+  data_cadastro DateTime @default(now())
+  status        JobStatus @default(ATIVO)
+}
+
+model Requirement {
+  id             Int     @id @default(autoincrement())  
+  requisitos_job String     
+  jobId          Int    
+  job            Job     @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model Benefit {
+  id              Int     @id @default(autoincrement())  
+  beneficios_job  String     
+  jobId           Int    
+  job             Job     @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model tags {
+  id        Int     @id @default(autoincrement())  
+  tags_job  String     
+  jobId     Int   
+  job       Job     @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
+model Usuario {
+  id     Int    @id @default(autoincrement())  
+  email  String @unique
+  senha  String
+}
