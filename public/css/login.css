@@ -1,0 +1,129 @@
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #007bff;
+    --background-color: #f4f7f9;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: var(--light-gray);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 5%;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+
+main{
+    display: flex;
+    justify-content: center;
+    margin: 80px;
+}
+
+form{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 3px;
+    display: grid;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.inputs{
+    display: grid;
+    padding: 12px;
+    height: 25vh;
+    width: 35vw;
+    justify-content: center;
+}
+
+input{
+    width: 25vw;
+    height: 4vh;
+    padding: 12px;
+    position: relative;
+}
+
+button{
+    margin-top: 12px;
+    width: 25vw;
+    height: 4vh;
+    color: white;
+    background-color: blue;
+    border-style: none;
+}
+
+button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+a{
+    text-decoration: none;
+}
+
+#resposta{
+  position: fixed;
+  font-size: 12px;
+  display: none;
+  margin-top: 110px;
+  margin-left: 52px;
+}
+
+/* só aplica quando o campo tem a classe is-invalid */
+input.is-invalid {
+  border: 1px solid #c0392b;               /* borda vermelha forte */
+  box-shadow: 0 0 0 1px rgba(192, 57, 43, .5); /* realce suave */
+}
+
+/* opcional: se quiser mudar o placeholder quando inválido */
+input.is-invalid::placeholder {
+  color: #c0392b;
+}
+
+
+/* estilo extra para o erro de credenciais inválidas */
+.login-error {
+  display: block;                   /* força quebra de linha */
+  background-color: #fdecea;        /* fundo rosa-claro */
+  color: #c0392b;                   /* texto vermelho forte */
+  border: 1px solid #e0b4b4;        /* borda suave */
+  padding: 0.6em 1em;               /* espaçamento */
+  border-radius: 0.25rem;           /* cantos arredondados */
+  margin-bottom: 1em;               /* distância do conteúdo abaixo */
+  font-size: 0.95rem;               /* ligeiramente menor que o normal */
+  text-align: center;               /* centraliza o texto */
+  font-weight: 500;                 /* leve negrito para destaque */
+}
+
